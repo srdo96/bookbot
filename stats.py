@@ -11,3 +11,14 @@ def num_of_each_character(text):
         else:
             character_dic[char] = 1
     return character_dic
+
+def sort_on(items):
+    return items["num"]
+
+def sort_dict(dict_of_char):
+    list_of_dict = []
+    for c in dict_of_char:
+        new_dict = {"char": f"{c}", "num": dict_of_char[c]}
+        list_of_dict.append(new_dict)
+    list_of_dict.sort(reverse=True, key=sort_on)
+    return list_of_dict
